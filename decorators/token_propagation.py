@@ -17,6 +17,7 @@ class Request:
 def token_aware(func):
     def wrap_func(request, **kwargs):
         func(request=request, token=kwargs.__getitem__('token'))
+
     return wrap_func
 
 
